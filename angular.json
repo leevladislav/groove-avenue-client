@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "groove-avenue:build"
+            "browserTarget": "groove-avenue:build",
+            "port": 5000
           },
           "configurations": {
             "production": {
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "groove-avenue"
+    }
+  },
+  "defaultProject": "groove-avenue",
+  "cli": {
+    "analytics": "771078be-3ddf-474c-b565-7fa9202a7564"
+  }
 }
