@@ -1,0 +1,30 @@
+.card {
+  background: $primary-card-background;
+  box-shadow: $primary-box-shadow;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  .card-heading {
+    background-color: $secondary-card-background;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px $primary-card-background;
+    -webkit-text-fill-color: $light-color;
+  }
+}
+
+.card-secondary {
+  background-color: $secondary-card-background;
+  box-shadow: $primary-box-shadow;
+  border-radius: $border-radius;
+}
+
+.card-image {
+  .avatar {
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

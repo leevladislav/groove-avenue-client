@@ -1,0 +1,53 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "../../styles/variables";
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+
+  .auth-layout {
+    max-width: 450px;
+    flex-grow: 1;
+    background-color: $primary-card-background;
+    box-shadow: $primary-box-shadow;
+    border-radius: 4px;
+
+    .auth-header {
+      .header-logo {
+        max-width: 84px;
+      }
+    }
+
+    .auth-body {
+      ::ng-deep {
+        .body-title {
+          font-size: 28px;
+          font-weight: $bold-font-weight;
+        }
+
+        form {
+          .mat-form-field {
+            width: 100%;
+            max-width: 350px;
+
+            .toggle-password {
+              color: $muted-color;
+            }
+          }
+        }
+
+        .body-additional-action {
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

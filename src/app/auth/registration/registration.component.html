@@ -1,0 +1,42 @@
+<p class="body-title mb-3">Регистрация</p>
+
+<form [formGroup]="registrationForm" (ngSubmit)="registration()">
+    <mat-form-field class="mb-2">
+        <input id="email" matInput placeholder="Введите Email" formControlName="email" required>
+        <mat-error>
+            <app-validator-message [field]="registrationForm.get('email')"></app-validator-message>
+        </mat-error>
+    </mat-form-field>
+
+    <fieldset formGroupName="password">
+        <mat-form-field class="mb-3">
+            <input id="new-password" placeholder="Новый пароль" [type]="hideNewPassword ? 'password' : 'text'" matInput
+                   formControlName="newPassword" required>
+            <button mat-icon-button matSuffix (click)="hideNewPassword = !hideNewPassword" type="button" class="toggle-password">
+                <mat-icon>{{hideNewPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>
+                <app-validator-message [field]="registrationForm.get('password').get('newPassword')"></app-validator-message>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mb-3">
+            <input id="repeat-new-password" placeholder="Подтверждение пароля" [type]="hideRepeatNewPassword ? 'password' : 'text'" matInput
+                   formControlName="repeatNewPassword" required>
+            <button mat-icon-button matSuffix (click)="hideRepeatNewPassword = !hideRepeatNewPassword" type="button" class="toggle-password">
+                <mat-icon>{{hideRepeatNewPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>
+                <app-validator-message [field]="registrationForm.get('password').get('repeatNewPassword')"></app-validator-message>
+            </mat-error>
+        </mat-form-field>
+    </fieldset>
+
+    <button class="btn btn-primary btn-lg mx-2"
+            type="submit"
+            [disabled]="registrationForm.invalid">Регистрация</button>
+</form>
+
+<p class="body-additional-action text-center mt-3 mb-0">
+    Уже есть аккаунт? <a [routerLink]="['/auth/login']">Авторизуйтесь</a>
+</p>

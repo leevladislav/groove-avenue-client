@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import "preloader";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Optional
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/utilities/text";
+@import "~bootstrap/scss/utilities/spacing";
+@import "~bootstrap/scss/utilities/sizing";
+@import "~bootstrap/scss/utilities/embed";
+@import "~bootstrap/scss/utilities/display";
+
+// Custom styles
+@import "styles/index";
+
+// Custom material theme
+@import "custom-theme";
+@import "styles/material-custom/index";
+

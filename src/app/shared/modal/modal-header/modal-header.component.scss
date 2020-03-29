@@ -1,0 +1,10 @@
+@import '../../../../styles/variables';
+
+.modal-header {
+  color: $primary-text-color;
+
+  .modal-header-title {
+    font-size: 28px;
+    font-weight: $bold-font-weight;
+  }
+}

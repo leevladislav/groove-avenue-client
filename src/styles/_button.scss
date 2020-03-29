@@ -1,0 +1,89 @@
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  font-size: 20px;
+  width: 100%;
+  max-width: 200px;
+  min-height: 48px;
+  line-height: 1;
+  font-weight: $medium-font-weight;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: none;
+  border-radius: 3px;
+  border: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.btn-md {
+    max-width: 316px;
+  }
+
+  &.btn-lg {
+    max-width: 350px;
+  }
+
+  &.btn-round {
+    max-width: 48px;
+    max-height: 48px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .mat-icon {
+    margin-right: 10px;
+  }
+}
+
+.btn-primary {
+  color: $primary-button-color;
+  background: $primary-button-background;
+  border: none;
+
+  &:hover,
+  &:active {
+    color: $primary-button-hover-color;
+  }
+}
+
+.btn-secondary {
+  color: $secondary-button-color;
+  background: $secondary-button-background;
+
+  &:hover,
+  &:active {
+    color: $secondary-button-hover-color;
+  }
+}
+
+.btn-accent {
+  color: $accent-button-color;
+  background: $accent-button-background;
+  border: $accent-button-border;
+
+  &:hover,
+  &:active {
+    color: $accent-button-hover-color;
+  }
+
+  .mat-icon {
+    color: $accent-button-color;
+  }
+}
+
+.mat-raised-button {
+  font-size: 20px;
+}

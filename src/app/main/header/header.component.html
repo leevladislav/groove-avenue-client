@@ -1,0 +1,117 @@
+<div class="header-layout">
+    <a [routerLink]="['/home']" class="header-logo mr-2">
+        <img src="/assets/images/main-white-logo.png" alt="Groove-avenue">
+    </a>
+
+    <div class="mobile-menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item
+                    [routerLink]="['/girl']"
+                    routerLinkActive="active">Он
+            </button>
+
+            <button mat-menu-item
+                    [routerLink]="['/man']"
+                    routerLinkActive="active">Она
+            </button>
+
+            <button mat-menu-item
+                    [routerLink]="['/about']"
+                    routerLinkActive="active">О нас
+            </button>
+
+            <button mat-menu-item
+                    [routerLink]="['/info']"
+                    routerLinkActive="active">Информация
+            </button>
+        </mat-menu>
+    </div>
+
+    <ul class="header-menu">
+        <li class="menu-item menu-item-has-children"
+            routerLinkActive="active-children">
+            <a class="item-link">Он
+                <mat-icon class="mx-2">keyboard_arrow_down</mat-icon>
+            </a>
+
+            <ul class="sub-menu py-2">
+                <li class="menu-item">
+                    <a class="item-link"
+                       [routerLink]="['/wish-list']">Wish List</a>
+                </li>
+
+                <li class="menu-item">
+                    <a class="item-link"
+                       [routerLink]="['/team']">Team</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-item menu-item-has-children"
+            routerLinkActive="active-children"
+            [routerLinkActiveOptions]="{exact: true}">
+            <a class="item-link">Она
+                <mat-icon class="mx-2">keyboard_arrow_down</mat-icon>
+            </a>
+
+            <ul class="sub-menu py-2">
+                <li class="menu-item">
+                    <a class="item-link"
+                       [routerLink]="['/bekey-info']">BeKey Info</a>
+                </li>
+
+                <li class="menu-item">
+                    <a class="item-link"
+                       [routerLink]="['/knowledge-base']">Knowledge Base</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-item">
+            <a class="item-link"
+               [routerLink]="['/sale']"
+               routerLinkActive="active">Sale</a>
+        </li>
+
+        <li class="menu-item">
+            <a class="item-link"
+               [routerLink]="['/about']"
+               routerLinkActive="active">О нас</a>
+        </li>
+
+        <li class="menu-item">
+            <a class="item-link"
+               [routerLink]="['/info']"
+               routerLinkActive="active">Информация</a>
+        </li>
+    </ul>
+
+    <ul class="header-user">
+        <li class="menu-item">
+            <a class="item-link d-flex align-items-center" [routerLink]="['/profile/']">
+                Профиль <mat-icon class="mx-2">person</mat-icon></a>
+        </li>
+
+        <li class="menu-item">
+            <a class="d-flex item-link" [routerLink]="['/like/']">
+                Избранное <mat-icon class="mx-2">favorite</mat-icon>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a class="d-flex item-link" [routerLink]="['/cart/']">
+                Корзина <mat-icon class="mx-2">shopping_cart</mat-icon>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a class="d-flex item-link" (click)="search()">
+                Поиск <mat-icon class="mx-2">search</mat-icon>
+            </a>
+        </li>
+    </ul>
+</div>
