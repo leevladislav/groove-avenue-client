@@ -27,11 +27,18 @@
     }
 
     .header-logo {
-        display: flex;
-        max-width: 84px;
+        font-family: $font-permanent;
+        font-size: 30px;
+        line-height: 1;
+        margin-right: 10px;
+
+        @include media-breakpoint-down(md) {
+            order: 1;
+            margin: 0 10px;
+        }
 
         @include media-breakpoint-down(sm) {
-            max-width: 60px;
+            font-size: 20px;
         }
     }
 
@@ -41,6 +48,32 @@
 
         @include media-breakpoint-down(lg) {
             display: flex;
+        }
+
+        @include media-breakpoint-down(md) {
+            order: 0;
+        }
+
+        .burger {
+            ::ng-deep {
+                .mat-button-wrapper {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    padding: 20px 10px;
+                }
+            }
+        }
+
+        .mobile-search {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 20px 10px;
+
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
         }
     }
 
@@ -57,6 +90,24 @@
         display: flex;
         align-items: center;
 
+        @include media-breakpoint-down(md) {
+            order: 2;
+        }
+
+        .item-link {
+            span {
+                @include media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+        }
+
+        .profile,
+        .search {
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
     }
 
     .menu-item {
@@ -65,6 +116,10 @@
             display: flex;
             align-items: center;
             padding: 20px 12px;
+
+            @include media-breakpoint-down(md) {
+                padding: 20px 10px;
+            }
         }
     }
 
@@ -75,9 +130,11 @@
             position: absolute;
             top: 100%;
             z-index: 2;
-            background-color: red;
             left: 0;
             min-width: 200px;
+            background-color: $main-background;
+            border-radius: $border-radius;
+            box-shadow: $primary-box-shadow;
 
             &:after {
                 left: 12px;
@@ -97,4 +154,8 @@
             }
         }
     }
+}
+
+.mat-menu-item {
+    text-align: right;
 }

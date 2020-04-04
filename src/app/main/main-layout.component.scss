@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .main {
     .main-layout {
         display: flex;
@@ -6,6 +8,7 @@
 
         .main-header {
             min-width: 100%;
+            border-bottom: $border-bottom;
         }
 
         .main-body {

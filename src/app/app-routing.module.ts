@@ -11,56 +11,72 @@ import {MainLayoutComponent} from './main/main-layout.component';
 
 
 const routes: Routes = [
-  {
-    path: 'auth',
-    component: AuthLayoutComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
+    {
+        path: 'auth',
+        component: AuthLayoutComponent,
+        canActivate: [AuthGuard],
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'login'
+            },
+            {
+                path: 'login',
+                component: LoginComponent,
+            },
+            {
+                path: 'forgot-password',
+                component: ForgotPasswordComponent
+            },
+            {
+                path: 'reset-password',
+                component: ResetPasswordComponent
+            },
+            {
+                path: 'registration',
+                component: RegistrationComponent
+            }
+        ]
+    },
+    {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'login'
-      },
-      {
-        path: 'login',
-        component: LoginComponent,
-      },
-      {
-        path: 'forgot-password',
-        component: ForgotPasswordComponent
-      },
-      {
-        path: 'reset-password',
-        component: ResetPasswordComponent
-      },
-      {
-        path: 'registration',
-        component: RegistrationComponent
-      }
-    ]
-  },
-  {
-    path: '',
-    component: MainLayoutComponent,
-    canActivate: [AppGuard],
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'home'
-      },
-      {
-        path: 'home',
-        loadChildren: () => import('./main/home/home.module').then(m => m.HomeModule)
-      }
-    ]
-  },
-  {path: '**', redirectTo: 'home'}
+        component: MainLayoutComponent,
+        canActivate: [AppGuard],
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'home'
+            },
+            {
+                path: 'home',
+                loadChildren: () => import('./main/home/home.module').then(m => m.HomeModule)
+            },
+            {
+                path: 'sale',
+                loadChildren: () => import('./main/sale/sale.module').then(m => m.SaleModule)
+            },
+            {
+                path: 'about',
+                loadChildren: () => import('./main/about/about.module').then(m => m.AboutModule)
+            },
+            {
+                path: 'info',
+                loadChildren: () => import('./main/info/info.module').then(m => m.InfoModule)
+            },
+            {
+                path: 'profile',
+                loadChildren: () => import('./main/profile/profile.module').then(m => m.ProfileModule)
+            },
+        ]
+    },
+    {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {
 }
