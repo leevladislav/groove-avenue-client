@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins/breakpoints";
-@import "../../../styles/variables";
+@import "../../../../styles/variables";
 
 .header-layout {
     display: flex;
@@ -154,8 +154,26 @@
             }
         }
     }
+
+    .sale {
+        color: $warn-color;
+
+        &:hover,
+        &:active {
+            color: $warn-color;
+        }
+    }
 }
 
 .mat-menu-item {
     text-align: right;
+
+    &.sale {
+        color: $warn-color;
+
+        &:hover,
+        &:active {
+            color: $warn-color;
+        }
+    }
 }

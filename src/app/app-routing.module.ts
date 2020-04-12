@@ -69,6 +69,14 @@ const routes: Routes = [
                 path: 'profile',
                 loadChildren: () => import('./main/profile/profile.module').then(m => m.ProfileModule)
             },
+            {
+                path: 'favorite',
+                loadChildren: () => import('./main/favorite/favorite.module').then(m => m.FavoriteModule)
+            },
+            {
+                path: 'cart',
+                loadChildren: () => import('./main/cart/cart.module').then(m => m.CartModule)
+            }
         ]
     },
     {path: '**', redirectTo: 'home'}

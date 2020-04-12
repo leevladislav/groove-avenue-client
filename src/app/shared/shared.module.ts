@@ -13,6 +13,7 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/
 import {CustomDateAdapter} from './custom-date-adapter';
 import {CUSTOM_FORMATS} from '../app.constants';
 import {NumberOnlyDirective} from './derectives/numbers-only.derective';
+import {LoaderComponent} from './loader/loader.component';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import {NumberOnlyDirective} from './derectives/numbers-only.derective';
         ValidatorMessageComponent,
         BackBtnComponent,
         ModalHeaderComponent,
-        NumberOnlyDirective
+        NumberOnlyDirective,
+        LoaderComponent
     ],
     providers: [
         {
@@ -50,7 +52,8 @@ import {NumberOnlyDirective} from './derectives/numbers-only.derective';
         ValidatorMessageComponent,
         BackBtnComponent,
         ModalHeaderComponent,
-        NumberOnlyDirective
+        NumberOnlyDirective,
+        LoaderComponent
     ]
 })
 export class SharedModule {

@@ -13,7 +13,9 @@ import {RegistrationComponent} from './auth/registration/registration.component'
 import {ResetPasswordComponent} from './auth/reset-password/reset-password.component';
 import {ForgotPasswordComponent} from './auth/forgot-password/forgot-password.component';
 import {MainLayoutComponent} from './main/main-layout.component';
-import {HeaderComponent} from './main/header/header.component';
+import {HeaderComponent} from './main/shared-components/header/header.component';
+import {FooterComponent} from './main/shared-components/footer/footer.component';
+import {FeaturesComponent} from './main/shared-components/features/features.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import {HeaderComponent} from './main/header/header.component';
         ModalInfoComponent,
         ModalConfirmComponent,
         MainLayoutComponent,
-        HeaderComponent
+        HeaderComponent,
+        FooterComponent,
+        FeaturesComponent
     ],
     imports: [
         BrowserModule,
